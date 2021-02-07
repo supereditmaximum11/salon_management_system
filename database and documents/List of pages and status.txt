@@ -1,0 +1,239 @@
+main page
+-index
+-login
+-Customer_Add
+	Include
+	-aheader
+	-dbconnect
+	-footer
+	Action
+	-Customer_Action | Include -dbconnect 
+-about
+
+admin page
+-admin_home
+	Include
+	-admin_header
+-add_service_category
+	Include
+	-dbconnect
+	-admin_header
+	Action
+	-service_category_action | Include -dbconnect
+-view_service_catgeroy
+	Include
+	-dbconnect
+	-admin_header
+	href
+	-add_service_category
+	-edit_service_category | Include -admin_header, -dbconnect
+	-delete_service_catgeory | Include -dbconnect
+-add_service	
+	Include
+	-dbconnect
+	-admin_header
+	Action
+	-service_action | Include -dbconnect
+-view_service
+	Include
+	-dbconnect
+	-admin_header
+	-view_service_action
+	href
+	-add_service
+-view_service_action
+	Include
+	-dbconnect
+	href
+	-edit_service | Include -admin_header, -dbconnect, -view_service_action
+	-delete_service | Include -dbconnect, -view_service_action
+-admin_app_status
+	Include
+	-dbconnect
+	-admin_header
+	href
+	-reject_app_request | Include -dbconnect
+-staff_add
+	Include
+	-dbconnect
+	-admin_header
+	Action
+	-staff_action | Include -dbconnect
+-admin_staff_view
+	Include
+	-dbconnect
+	-admin_header
+	href
+	-view_staff | Include -dbconnect, -admin_header
+-view_staff
+	Include
+	-dbconnect
+	-admin_header
+	href
+	delete_staff | Include -dbconnect
+	admin_staff_view
+-admin_customer_view
+	Include
+	-dbconnect
+	-admin_header
+	href
+	-customer_view | Include -dbconnect, -admin_header
+-schedules
+	Include
+	-dbconnect
+	-admin_header
+	href
+	-payment | Include -dbconnect
+-change_password
+	Include
+	-admin_header
+	href
+	-password_action | Include -dbconnect
+-logout
+
+employee page
+-staff_first
+	Include 
+	-dbconnect
+	-staff_header
+-staff_home
+	Include 
+	-dbconnect
+	-staff_header
+-staff_edit
+	Include 
+	-dbconnect
+	-staff_header
+	Action
+	-staff_edit_action | Include -dbconnect
+-staff_appointment_status
+	Include 
+	-dbconnect
+	-staff_header
+-staff_change_pass
+	Include
+	-admin_header
+	href
+	-password_action | Include -dbconnect
+-logout
+
+customer page
+-customer_first
+	Include
+	-customer_header
+-customer_service_view
+	Include
+	-customer_header
+	-dbconnect
+	href
+	-appointment_add | Include -customer_header, -dbconnect | action -appointment_action
+-appointment_status
+	Include	
+	-customer_header
+	-dbconnect
+	href
+	-appointment_delete | Include -dbconnect
+	-appointment_cancel | Include -dbconnect
+-view_bill
+	Include	
+	-customer_header
+	-dbconnect
+	href
+	-viewdetails_bill | Include -dbconnect
+	-payment_bill
+-payment_bill
+	Include	
+	-customer_header
+	-dbconnect
+	action
+	-bill_payment_action | Include -dbconnect
+-customer_home
+	Include	
+	-customer_header
+-customer_edit
+	Include	
+	-customer_header
+	-dbconnect
+	action
+	-edit_action | Include -dbconnect
+-customer_change_pass
+	Include	
+	-customer_header
+	action
+	-password_action | Include -dbconnect
+-logout
+
+
+lahat ng pages at actions
+-index /
+-login /
+-customer_add /
+-aheader /
+-dbconnect /
+-customer_action /
+-about /
+-admin_header /
+-admin_home / 
+-add_service_category /
+-service_category_action /
+-view_service_catgory / 
+-edit_service_category /
+-delete_service_catgeory / 
+-add_service /	
+-service_action / 
+-view_service / 
+-view_service_action /
+-edit_service /
+-delete_service / 
+-admin_app_status /
+-reject_app_request /
+-staff_add / 
+-staff_action /
+-admin_staff_view /
+-view_staff /
+-delete_staff /
+-admin_customer_view / 
+-customer_view /
+-schedules /
+-payment /
+-change_password /
+-password_action /
+-logout /
+-staff_first /
+-staff_header /
+-staff_home /
+-staff_edit / 
+-staff_edit_action / 
+-staff_appointment_status /
+-staff_appoint_service /
+-staff_change_pass /
+-customer_first /
+-customer_header /
+-customer_service_view / 
+-appointment_add /
+-appointment_action /
+-appointment_status /
+-appointment_delete /
+-appointment_cancel /
+-view_bill /
+-view_details_bill /
+-payment_bill /
+-bill_payment_action /
+-customer_home / 
+-customer_edit /
+-edit_action /
+-customer_change_pass/
+
+appointment status
+0 canceled - pwede maging deleted
+1 requested - pwede maging canceled o rejected o serviced
+2 serviced - pwede maging paid
+3 rejected - pwede maging deleted
+4 deleted
+5 paid - pwede maging deleted
+future
+
+	screenshots
+	ayusin database final
+
+
